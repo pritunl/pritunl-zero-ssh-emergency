@@ -164,6 +164,16 @@ func Certificate() (err error) {
 		return
 	}
 
+	roles := []string{}
+	args := flag.Args()
+	for _, arg := range args[2:] {
+		roles = append(roles, arg)
+	}
+
+	if len(roles) == 0 {
+		roles = []string{"emergency"}
+	}
+
 	fmt.Print("Enter encryption passphrase: ")
 	passByt, err := terminal.ReadPassword(int(syscall.Stdin))
 	if err != nil {
@@ -208,7 +218,7 @@ func Certificate() (err error) {
 			pass,
 			key,
 			sshPubKey,
-			[]string{"emergency", "test"},
+			roles,
 		)
 		if e != nil {
 			err = e
