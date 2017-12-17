@@ -110,7 +110,7 @@ func CreateCertificate(pass string, privKey string, sshPubKey string,
 	serial := serialHash.Sum64()
 
 	validAfter := time.Now().Add(-5 * time.Minute).Unix()
-	validBefore := time.Now().Add(10 * time.Minute).Unix()
+	validBefore := time.Now().Add(30 * time.Minute).Unix()
 
 	cert := &ssh.Certificate{
 		Key:             pubKey,
