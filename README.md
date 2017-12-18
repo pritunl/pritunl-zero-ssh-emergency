@@ -6,8 +6,7 @@ is needed.
 
 ## Preparation
 
-This must be done before losing access to the Pritunl Zero server. Use a long
-encryption passphrase.
+This must be done before losing access to the Pritunl Zero server. Keys are encrypted with AES-256.
 
 ```bash
 # Export SSH authorities
@@ -15,6 +14,8 @@ sudo pritunl-zero export-ssh ~/ssh_backup.json
 ```
 
 ## Usage
+
+Certificates are valid for 30 minutes.
 
 ```bash
 # Install emergency ssh client
