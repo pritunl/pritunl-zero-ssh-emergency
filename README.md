@@ -37,6 +37,15 @@ below.
 ~/go/bin/pritunl-zero-ssh-emergency ~/ssh_backup.json ~/.ssh/id_rsa.pub role1 role2
 ```
 
+## Strict host checking
+
+If your SSH configuration has strict host checking enabled you may need to
+remove the option from the SSH configuration to connect. This can be done with
+the pritunl-ssh client by running the command `pritunl-ssh clear-strict-host`.
+The bastion host configuration can be removed with the command
+`pritunl-ssh clear-bastion-host`. The command `pritunl-ssh clear` will remove
+all SSH configuration changes made.
+
 ## License
 
 Please refer to the [`LICENSE`](LICENSE) file for a copy of the license.
